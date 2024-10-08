@@ -13,9 +13,7 @@
     color: #775942;
   }
 
-  form {
-    width: 768px;
-    margin: 0 auto;
+  form { 
     display: flex;
     flex-direction: column;
     justify-content: center;

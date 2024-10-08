@@ -1,3 +1,9 @@
+import "./error.css"
+
 export default function ErrorPage() {
-  return <p>Sorry, something went wrong</p>
+  return (
+    <div className="errorCont">
+      
+    </div>
+  )
 }

@@ -1,0 +1,31 @@
+.urlItem {
+  width: 768px;
+  margin: 20px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  border-bottom: 2px solid #775942;
+
+  .links { 
+    width: 540px;
+    text-align: left;
+    margin-left: 20px;
+
+    h3 {
+      color: #775942;
+    }
+
+    p {
+      color: #03030369;
+    }
+  }
+
+  button {
+    background: #775942;
+    padding: 5px 10px;
+    border: none;
+    color: white;
+    border-radius: 10px;
+  }
+}

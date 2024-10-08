@@ -7,24 +7,24 @@
     margin-block: 20px;
     color: #775942;
   }
-}
-
-form {
-  width: 768px;
-  margin: 0 auto;
-
+  form {
+    width: 768px;
+    margin: 0 auto;
   
-  input {
-    width: 80%;
-    padding: 5px 10px;
-    border-radius: 20px 0 0 20px;
-    border: 2px solid #775942;
-  }
-  button {
-    background: #775942;
-    padding: 5px 10px;
-    border: 2px solid #775942;
-    color: white;
-    border-radius: 0 20px 20px 0;
+    
+    input {
+      width: 80%;
+      padding: 5px 10px;
+      border-radius: 20px 0 0 20px;
+      border: 2px solid #775942;
+    }
+    button {
+      background: #775942;
+      padding: 5px 10px;
+      border: 2px solid #775942;
+      color: white;
+      border-radius: 0 20px 20px 0;
+    }
   }
 }
+

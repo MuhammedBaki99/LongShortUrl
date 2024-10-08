@@ -20,7 +20,7 @@ export default function ShortUrlForm() {
     return (
         <div className="shortformCont">
             <form ref={formRef} action={action} method="post">
-                <input type="text" name="long_url" placeholder="kısaltmak istediğin URL" />
+                <input type="text" name="long_url" placeholder="Kısaltmak istediğiniz URL'i giriniz..." />
                 <button type="submit">Linki Kısalt</button>
             </form>
             <h3>Hayat kısa, linkin de öyle olsun!</h3>

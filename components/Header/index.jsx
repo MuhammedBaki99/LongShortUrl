@@ -1,7 +1,7 @@
 import { signOut } from "@/actions/auth";
 import { createClient } from "@/utils/supabase/server";
 import Link from "next/link";
-
+import "./header.css"
 export default async function Header() {
 
     const supabase = createClient();
@@ -9,27 +9,47 @@ export default async function Header() {
     console.log(user);
 
     return (
-        <>
+        <div className="headerCont">
 
-            <ul className="flex gap-1 items-center">
-                <li>Anasayfa</li>
-                <li>Kullanıcılar</li>
-                <li>Yazılar</li>
-                {
-                    user ? (
-                        <>
-                            <span>Hello {user.user_metadata.firstName}</span>
+            <Link href={"/"}>M.BC</Link>{
+                user ? (
+                    <>
+                        <div className="sign"> 
+                            <span className="name">{user.user_metadata.firstName} {user.user_metadata.lastName}</span>
                             <form action={signOut}>
-                                <button>Çıkış Yap</button>
+                                <button >Çıkış Yap</button>
                             </form>
-                        </>
+                        </div>
+                    </>
+                )
+                    : (
+                        <div className="signBtn">
+                            <Link href={"/login"}>Giriş Yap</Link>
+                            <Link href={"/signup"}>Kayıt Ol</Link>
+                        </div>
                     )
-                        : (
-                            <Link href="/login">Giriş Yap</Link>
-                        )
-                }
-
-            </ul>
-        </>
+            }
+        </div>
     )
 }
+
+
+{/* <ul className="flex gap-1 items-center">
+<li>Anasayfa</li>
+<li>Kullanıcılar</li>
+<li>Yazılar</li>
+{
+    user ? (
+        <>
+            <span>Hello {user.user_metadata.firstName}</span>
+            <form action={signOut}>
+                <button>Çıkış Yap</button>
+            </form>
+        </>
+    )
+        : (
+            <Link href="/login">Giriş Yap</Link>
+        )
+}
+
+</ul> */}

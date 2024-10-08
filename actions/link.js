@@ -13,7 +13,6 @@ export async function linkToShortAction(prevState, formData) {
     const regex = /^(http(s):\/\/.)[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)$/
     if (!regex.test(longUrl)) return { error: "Geçersiz bir url girdiniz" }
 
-
     const supabase = createClient();
     const { data: { user }, error } = await supabase.auth.getUser(); 
 
@@ -22,7 +21,7 @@ export async function linkToShortAction(prevState, formData) {
         method: "POST",
         headers: defaultHeader,
         body: JSON.stringify({
-            shorturl: "K.AP/" + shortUrl,
+            shorturl: "m.bc/" + shortUrl,
             longurl: longUrl,
             user_id: user?.id
         })

@@ -3,12 +3,11 @@ import { login, signup } from "./action"
 export default function LoginPage() {
   return (
     <form>
-      <label htmlFor="email">Email:</label>
+      <label htmlFor="email">Eposta:</label>
       <input id="email" name="email" type="email" required />
-      <label htmlFor="password">Password:</label>
+      <label htmlFor="password">Şifre:</label>
       <input id="password" name="password" type="password" required />
-      <button formAction={login}>Log in</button>
-      <button formAction={signup}>Sign up</button>
+      <button formAction={login}>Log in</button> 
     </form>
   )
 }

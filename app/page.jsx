@@ -1,5 +1,5 @@
 import { createClient } from "@/utils/supabase/server";
-import ShortUrlForm from "./form";
+import ShortUrlForm from "./shortform/form";
 
 export default async function Home() {
 
@@ -16,9 +16,8 @@ export default async function Home() {
 
   return (
     <div>
-      {data?.map((x, i) => <p key={i}>{x.shorturl}</p>)}
-      <h1>Linkini kısalt hayatı uzat</h1>
       <ShortUrlForm />
+      {data?.map((x, i) => <p key={i}>{x.shorturl}</p>)}
     </div>
   );
 }

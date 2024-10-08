@@ -1,13 +1,43 @@
-.urlItem {
+.urlCont {
   width: 768px;
+  height: 650px;
   margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow: scroll;
+  overflow-x: hidden;
+  padding-right: 20px;
+}
+ 
+::-webkit-scrollbar {
+  width: 0.5em;
+  height: 1em;
+}
+
+::-webkit-scrollbar-track {
+  background-color: white;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #775942;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #775942;
+}
+
+
+.urlItem {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
   border-bottom: 2px solid #775942;
+  background: white;
+  border-radius: 20px 20px 0 0;
 
-  .links { 
+  .links {
     width: 540px;
     text-align: left;
     margin-left: 20px;

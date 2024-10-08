@@ -16,7 +16,7 @@ export default async function Links() {
   console.log(userdata);
 
   return (
-    <div>
+    <div className="urlCont">
       {data?.map((x, i) => 
       <div className="urlItem" key={i}>
           <Svgfiles />

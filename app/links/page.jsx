@@ -1,6 +1,7 @@
 import { createClient } from "@/utils/supabase/server"; 
 import Svgfiles from "../svgfiles/page";
 import "./links.css"
+import Link from "next/link";
 
 export default async function Links() {
 
@@ -21,7 +22,7 @@ export default async function Links() {
       <div className="urlItem" key={i}>
           <Svgfiles />
           <div className="links">
-            <h3>{x.shorturl}</h3>
+            <Link href={x.longurl} >{x.shorturl}</Link>
             <p>{x.longurl}</p>
           </div>
           <button>Kopyala</button>

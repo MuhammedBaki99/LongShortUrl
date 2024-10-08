@@ -17,6 +17,12 @@
       padding: 5px 10px;
       border-radius: 20px 0 0 20px;
       border: 2px solid #775942;
+      caret-color: #775942;
+      color: #775942;
+    }
+    input:focus{
+      border: 2px solid #775942;
+      outline: none;
     }
     button {
       background: #775942;

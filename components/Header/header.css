@@ -3,7 +3,10 @@
 *::after {
   box-sizing: border-box;
 }
-
+::selection{
+  background: #775942;
+  color: white;
+}
 * {
   margin: 0;
   padding: 0;
@@ -57,6 +60,7 @@ h6 {
   align-items: center;
   border-bottom: 2px solid #775942;
   padding-bottom: 5px;
+  padding-inline: 20px;
 
   >a {
     font-size: 36px;
@@ -65,7 +69,7 @@ h6 {
     font-weight: 900;
   }
 
-  form { 
+  form {
     button {
       text-decoration: none;
       color: white;
@@ -85,18 +89,20 @@ h6 {
     }
   }
 
-  .sign { 
+  .sign {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 20px;
+    gap: 10px;
     border-radius: 0 0 20px 0;
 
     span {
+      color: #775942;
       width: 200px;
       padding: 5px;
-      margin-left: 10px;
-      border-bottom: 2px solid #775942;
+      text-align: center;
+      text-transform: capitalize;
+      margin-left: 10px;  
     }
   }
 }

@@ -20,13 +20,11 @@ export async function signOut() {
 }
 
 export async function signUp(formData) {
-   
-
     const supabase = createClient();
-    const { data : { user }, error } = await supabase.auth.signUp(
+    const { data: { user }, error } = await supabase.auth.signUp(
         {
             email: formData.get("email"),
-            password: formData.get("password"),  
+            password: formData.get("password"),
             options: {
                 data: {
                     ...defaultUserMetadata,

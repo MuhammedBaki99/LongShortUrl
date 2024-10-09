@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { useFormState } from "react-dom";
 import "./shortform.css"
 
-export default function ShortUrlForm() { 
+export default function ShortUrlForm() {
     const [state, action] = useFormState(linkToShortAction, {
         message: null,
         error: null
@@ -15,7 +15,7 @@ export default function ShortUrlForm() {
             formRef.current.reset();
         }
     }, [state]);
-    
+
 
     return (
         <div className="shortformCont">

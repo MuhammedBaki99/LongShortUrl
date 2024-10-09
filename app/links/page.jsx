@@ -1,4 +1,4 @@
-import { createClient } from "@/utils/supabase/server"; 
+import { createClient } from "@/utils/supabase/server";
 import Svgfiles from "../svgfiles/page";
 import "./links.css"
 import Link from "next/link";
@@ -13,20 +13,33 @@ export default async function Links() {
     .select('*')
     .eq("user_id", userdata.user?.id);
 
+  const { data: alldata, error: allerror } = await supabase
+    .from('urls')
+    .select('*');
+
   console.log(data);
   console.log(userdata);
 
   return (
     <div className="urlCont">
-      {data?.map((x, i) => 
-      <div className="urlItem" key={i}>
+      {!alldata?.user_id ? alldata?.map((x, i) =>
+        <div className="urlItem" key={i}>
           <Svgfiles />
           <div className="links">
             <Link href={x.longurl} >{x.shorturl}</Link>
             <p>{x.longurl}</p>
           </div>
           <button>Kopyala</button>
-        </div>)}
+        </div>) : ""}
+      {alldata?.user_id ? data?.map((x, i) =>
+        <div className="urlItem" key={i}>
+          <Svgfiles />
+          <div className="links">
+            <Link href={x.longurl} >{x.shorturl}</Link>
+            <p>{x.longurl}</p>
+          </div>
+          <button>Kopyala</button>
+        </div>): ""}
     </div>
   );
 }

@@ -5,11 +5,13 @@
   grid-template-columns: repeat(2, 1fr);
   align-items: center;
   justify-content: center;
-
+  padding-bottom: 124px;
 }
 
 .loginImg {
   position: relative;
+  object-fit: cover;
+
   img {
     margin: 0 auto;
   }
@@ -60,7 +62,7 @@
       color: white;
     }
 
-    input[type="email"] {
+    input {
       width: 330px;
       padding: 5px 10px;
       border-radius: 0 20px 20px 0;
@@ -68,24 +70,11 @@
       margin-left: 10px;
     }
 
-    input[type="email"]:focus {
-      outline: none;
-    }
-
-    input[type="password"] {
-      width: 330px;
-      padding: 5px 10px;
-      border-radius: 0 20px 20px 0;
-      border: 2px solid #775942;
-      margin-left: 10px;
-    }
-
-    input[type="password"]:focus {
+    input :focus {
       outline: none;
     }
 
   }
-
 
   button {
     background: #775942;
@@ -103,4 +92,119 @@
     transform: translateY(5px);
     box-shadow: 0 0 10px #775942;
   }
+}
+
+@media (width <=1560px) {
+  .loginContainer {
+    width: 90%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    justify-content: center;
+  }
+
+  .loginImg::before {
+    content: "";
+    width: 70%;
+    left: 20%;
+    bottom: -30px;
+  }
+
+  .login {
+    width: 90%;
+  }
+}
+
+@media (width <=1280px) {
+  .loginContainer {
+    width: 90%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 40px;
+  }
+
+  .loginImg::before {
+    content: "";
+    width: 50%;
+    left: 25%;
+    bottom: -30px;
+  }
+
+  .login {
+    width: 50%;
+    margin: 20px auto;
+  }
+}
+
+@media (width <=768px) {
+  .loginContainer {
+    width: 90%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 40px;
+  }
+
+  .loginImg::before {
+    content: "";
+    width: 70%;
+    left: 20%;
+    bottom: -30px;
+  }
+
+  .login {
+    width: 100%;
+    margin: 20px auto;
+  }
+
+  input {
+    width: 50%;
+  }
+}
+
+@media (width <=375px) {
+  .loginContainer {
+    width: 90%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 40px;
+  }
+
+  .loginImg::before {
+    content: "";
+    width: 70%;
+    left: 20%;
+    bottom: -30px;
+  }
+
+  .login {
+    width: 80%;
+    margin: 20px auto;
+
+    form {
+      label {
+        text-align: center;
+        padding: 10px;
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+      }
+
+      input {
+        width: 100%;
+        border-radius: 20px;
+        margin: 0;
+      }
+    }
+  }
+
 }

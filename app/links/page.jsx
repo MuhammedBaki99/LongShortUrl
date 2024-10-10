@@ -1,25 +1,36 @@
-import { createClient } from "@/utils/supabase/server";
+"use client"
+import { createClient } from "@/utils/supabase/client";
 import Svgfiles from "../svgfiles/page";
 import "./links.css"
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
-export default async function Links() {
+export default function Links() {
+  const [data, setData] = useState([]);
+  const [alldata, setAllData] = useState([]);
 
   const supabase = createClient();
-  const { data: userdata, error: usererror } = await supabase.auth.getUser();
+  useEffect(() => {
+    async function getData() {
+      const { data: userdata, error: usererror } = await supabase.auth.getUser();
+      const { data, error } = await supabase
+        .from('urls')
+        .select('*')
+        .eq("user_id", userdata.user?.id);
+      setData(data);
+    }
+    getData();
+    async function getAllData() {
+      const { data: userdata, error: usererror } = await supabase.auth.getUser();
+      const { data: alldata, error: allerror } = await supabase
+        .from('urls')
+        .select('*');
+      setAllData(alldata);
+    }
+    getAllData();
+  }, [data, alldata]);
 
-  const { data, error } = await supabase
-    .from('urls')
-    .select('*')
-    .eq("user_id", userdata.user?.id);
-
-  const { data: alldata, error: allerror } = await supabase
-    .from('urls')
-    .select('*');
-
-  console.log(data);
-  console.log(userdata);
-
+ 
   return (
     <div className="urlCont">
       {!alldata?.user_id ? alldata?.map((x, i) =>
@@ -39,7 +50,7 @@ export default async function Links() {
             <p>{x.longurl}</p>
           </div>
           <button>Kopyala</button>
-        </div>): ""}
+        </div>) : ""}
     </div>
   );
 }

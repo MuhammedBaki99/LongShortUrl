@@ -7,9 +7,9 @@
   gap: 20px;
   overflow: auto;
   overflow-x: hidden;
-  padding-right: 20px;
+  padding-right: 20px; 
 }
- 
+
 ::-webkit-scrollbar {
   width: 0.5em;
   height: 1em;
@@ -61,4 +61,44 @@
     color: white;
     border-radius: 10px;
   }
+}
+
+@media (width <=1560px) {
+  .urlCont {
+    width: 80%;
+    height: 571px;
+  }
+
+  .urlItem {  
+
+    .links {
+      width: 90%;
+      text-align: center;
+
+    }
+
+  }
+
+}
+
+@media (width <=540px) {
+  .urlCont {
+    width: 80%;
+    height: 650px;
+  }
+
+  .urlItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+    .links {
+      width: 100%;
+      text-align: center;
+
+    }
+
+  }
+
 }

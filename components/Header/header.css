@@ -3,10 +3,12 @@
 *::after {
   box-sizing: border-box;
 }
-::selection{
+
+::selection {
   background: #775942;
   color: white;
 }
+
 * {
   margin: 0;
   padding: 0;
@@ -19,6 +21,8 @@ body {
   background-image: url("/image/bg.png");
   background-size: 100%;
   background-repeat: no-repeat;
+  background-position: bottom; 
+  padding-bottom: 24px;
 }
 
 img,
@@ -102,7 +106,7 @@ h6 {
       padding: 5px;
       text-align: center;
       text-transform: capitalize;
-      margin-left: 10px;  
+      margin-left: 10px;
     }
   }
 }
@@ -126,5 +130,44 @@ h6 {
     color: #775942;
     transform: translateY(5px);
     box-shadow: 0 0 10px #775942;
+  }
+}
+
+@media (width <=1440px) {
+
+  .headerCont {
+    width: 90%;
+
+    >a {
+      font-size: 36px;
+    }
+
+    .sign {
+      span {
+        width: 150px;
+      }
+    }
+  }
+
+
+}
+
+@media (width <=768px) {
+
+  body {
+    background-size: 100% 100%;
+  }
+
+}
+
+@media (width <=375px) {
+  .headerCont {
+    display: flex;
+    flex-direction: column;
+
+    .sign{
+      flex-wrap: wrap;
+      justify-content: center;
+    }
   }
 }
